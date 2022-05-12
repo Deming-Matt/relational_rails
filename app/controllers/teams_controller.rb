@@ -1,6 +1,9 @@
 class TeamsController < ApplicationController
   def index
-    # require "pry"; binding.pry
     @team = Team.all
+  end
+
+  def show
+    @team = Team.find(params[:id])
   end
 end

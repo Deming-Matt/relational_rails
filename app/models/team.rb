@@ -3,5 +3,5 @@ class Team < ApplicationRecord
 
   validates_presence_of :name
   validates_presence_of :roster_spots
-  validates_presence_of :full_roster
+  validates_inclusion_of :full_roster, :in => [true, false]
 end

@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
   def index
-  end 
+    # require "pry"; binding.pry
+    @team = Team.all
+  end
 end

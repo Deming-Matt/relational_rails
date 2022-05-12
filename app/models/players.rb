@@ -4,5 +4,5 @@ class Players < ApplicationRecord
   validates_presence_of :fname
   validates_presence_of :lname
   validates_presence_of :jersey
-  validates_presence_of :healthy
+  validates_inclusion_of :healthy, :in => [true, false]
 end

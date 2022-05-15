@@ -1,0 +1,8 @@
+<h1>All Players</h1>
+
+<% @players.each do |player| %>
+  <p>"First Name: <%= player.fname %>"</p>
+  <p>"Last Name: <%= player.lname %>"</p>
+  <p>"Jersey Number: <%= player.jersey %>"</p>
+  <p>"Is he healthy? <%= player.healthy %>"</p>
+<% end %>

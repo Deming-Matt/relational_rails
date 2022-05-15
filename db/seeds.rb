@@ -18,3 +18,8 @@ miwi = Team.create!(name: "Minnesota Wild", roster_spots: 23, full_roster: true)
 sajs = Team.create!(name: "San Jose Sharks", roster_spots: 20, full_roster: false)
 waca = Team.create!(name: "Washington Capitals", roster_spots: 23, full_roster: true)
 dast = Team.create!(name: "Dallas Stars", roster_spots: 19, full_roster: false)
+
+coav.players.create!(fname: "Nathan", lname: "MacKinnon", jersey: 29, healthy: true)
+coav.players.create!(fname: "Gabriel", lname: "Landeskog", jersey: 92, healthy: true)
+coav.players.create!(fname: "Darcy", lname: "Kuemper", jersey: 35, healthy: false)
+coav.players.create!(fname: "Jack", lname: "Johnson", jersey: 3, healthy: true)

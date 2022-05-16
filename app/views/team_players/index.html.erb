@@ -1,4 +1,5 @@
 <h1>"<%= @teams.name %> Roster"</h1>
+<%= link_to "All Players", players_path %>
 
 <% @players.each do |player| %>
 <p>"Name: <%= player.fname %> <%= player.lname %>, Jersey: <%= player.jersey %>, Healthy: <%= player.healthy %>"</p>

@@ -47,7 +47,20 @@ RSpec.describe 'team index page', type: :feature do
     coav.players.create!(fname: "Jack", lname: "Johnson", jersey: 3, healthy: true)
 
     visit "/teams/#{coav.id}"
-    save_and_open_page
+
     expect(page.text).to have_content("Players on roster: #{coav.players.count}")
+  end
+
+  #User story 9
+  it 'can click a Teams link and route to Teams index page' do
+    derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false, created_at: 5.second.ago)
+    coav = Team.create!(name: "Colorado Avalanche", roster_spots: 23, full_roster: true, created_at: 1.second.ago)
+    miwi = Team.create!(name: "Minnesota Wild", roster_spots: 23, full_roster: true, created_at: 10.second.ago)
+    stlb = Team.create!(name: "St. Louis Blues", roster_spots: 21, full_roster: false, created_at: 4.second.ago)
+
+    visit '/players'
+    click_link "Teams"
+    
+    expect(page).to have_current_path('/teams')
   end
 end

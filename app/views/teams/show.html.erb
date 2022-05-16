@@ -1,7 +1,9 @@
 <h1>Team Info</h1>
-<%= link_to "Teams", teams_path %> <%= link_to "All Players", players_path %>
+<%= link_to "Teams", "teams" %> <%= link_to "All Players", "/players" %>
 
-  <p>"Club: <%= @team.name %>"</p>
-  <p>"Roster Spots Filled: <%= @team.roster_spots %>"</p>
-  <p>"Is their roster full? <%= @team.full_roster %>"</p>
-  <p>"Players on roster: <%= @team.players.count %>"</p>
+<%= link_to "#{@teams.name} Players", "/teams/#{@teams.id}/players" %>
+
+  <p>"Club: <%= @teams.name %>"</p>
+  <p>"Roster Spots Filled: <%= @teams.roster_spots %>"</p>
+  <p>"Is their roster full? <%= @teams.full_roster %>"</p>
+  <p>"Players on roster: <%= @teams.players.count %>"</p>

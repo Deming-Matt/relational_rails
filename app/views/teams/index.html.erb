@@ -1,5 +1,6 @@
 <h1>All Teams</h1>
+<%= link_to "Teams", "/teams" %> <%= link_to "All Players", "/players" %>
 
-<% @team.each do |team| %>
+<% @teams.each do |team| %>
   <p>"Club: <%= team.name %>"</p>
 <% end %>

@@ -4,4 +4,8 @@ class TeamPlayersController < ApplicationController
     @players = @teams.players
     # require "pry"; binding.pry
   end
+
+  def new
+
+  end 
 end

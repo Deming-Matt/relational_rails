@@ -23,7 +23,7 @@ RSpec.describe 'update parent class', type: :feature do
     fill_in "Full roster", with: "false"
     click_on "Update"
 
-    expect(current_path).to eq("/teams/:id")
+    expect(current_path).to eq("/teams/#{coav.id}")
     expect(page).to have_content("Florida Panthers")
   end
 end

@@ -1,4 +1,4 @@
-<%= form_with url: '/teams', method: :post, local: true do |form| %>
+<%= form_with url: "/teams/#{@team_id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
   <%= form.label :roster_spots %>

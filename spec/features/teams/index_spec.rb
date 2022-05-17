@@ -18,7 +18,7 @@ RSpec.describe 'team index page', type: :feature do
     derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false)
 
     visit "/teams/#{coav.id}"
-    save_and_open_page
+
     expect(page).to have_content("Club: #{coav.name}")
     expect(page).to have_content("Roster Spots Filled: #{coav.roster_spots}")
     expect(page).to have_content("Is their roster full? #{coav.full_roster}")
@@ -60,7 +60,8 @@ RSpec.describe 'team index page', type: :feature do
 
     visit '/players'
     click_link "Teams"
-    
+
     expect(page).to have_current_path('/teams')
   end
+
 end

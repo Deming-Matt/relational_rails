@@ -5,7 +5,7 @@ describe Player, type: :model do
     it { should belong_to :team }
   end
 
-  describe 'calidations' do
+  describe 'validations' do
     it { should validate_presence_of :fname }
     it { should validate_presence_of :lname }
     it { should validate_presence_of :jersey }

@@ -39,6 +39,7 @@ describe Player, type: :model do
     end
   end
 
+#user story 21
   describe "jersey_higher_than" do
     it "can sort players by jersey number above a threshold" do
       coav = Team.create!(name: "Colorado Avalanche", roster_spots: 23, full_roster: true)

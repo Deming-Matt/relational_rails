@@ -14,4 +14,7 @@ class Player < ApplicationRecord
     Player.order(:fname)
   end
 
+  def self.jersey_higher_than(num)
+    Player.order(:jersey).where("jersey > 30")
+  end
 end

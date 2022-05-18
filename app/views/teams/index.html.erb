@@ -2,7 +2,7 @@
 <%= link_to "Teams", "/teams" %> <%= link_to "All Players", "/players" %>
 
 <% @teams.each do |team| %>
-  <p>"Club: <%= team.name %> <%= team.created_at %>" <%= link_to "Edit", "/teams/#{team.id}/edit" %> <%= link_to "Delete", "/teams/#{team.id}", method: :delete %></p>
+  <p>"Club: <%= link_to team.name, "/teams/#{team.id}" %> <%= team.created_at %>" <%= link_to "Edit", "/teams/#{team.id}/edit" %> <%= link_to "Delete", "/teams/#{team.id}", method: :delete %></p>
 <% end %>
 
 <%= link_to "New Team", "/teams/new" %>

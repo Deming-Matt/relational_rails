@@ -25,7 +25,6 @@ RSpec.describe 'team show page', type: :feature do
     expect(page).to have_content("Colorado Avalanche")
 
     visit "/teams/#{coav.id}"
-
     click_link "Delete Team"
 
     expect(current_path).to eq("/teams")
@@ -35,5 +34,4 @@ RSpec.describe 'team show page', type: :feature do
 
     expect(page).to_not have_content("Nathan MacKinnon")
   end
-
 end

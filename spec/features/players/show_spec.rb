@@ -8,7 +8,6 @@ RSpec.describe 'player show page', type: :feature do
     coav.players.create!(fname: "Gabriel", lname: "Landeskog", jersey: 92, healthy: true)
 
     visit "/players/#{coav.players.first.id}"
-    # save_and_open_page
     expect(page).to have_content("Name: Nathan MacKinnon")
     expect(page).to have_content("Jersey: 29")
     expect(page).to have_content("Healthy: true")
@@ -23,7 +22,7 @@ RSpec.describe 'player show page', type: :feature do
     visit "/players"
 
     expect(page).to have_content("Nathan MacKinnon")
-    
+
     visit "/players/#{nathan.id}"
     click_on "Delete Player"
 

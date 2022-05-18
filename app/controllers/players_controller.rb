@@ -16,7 +16,13 @@ class PlayersController < ApplicationController
     player.update(player_params)
     redirect_to "/players/#{player.id}"
   end
-  
+
+  def destroy
+    player = Player.find(params[:id])
+    player.destroy
+    redirect_to "/players"
+  end
+
   private
 
     def player_params

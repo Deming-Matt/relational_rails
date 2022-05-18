@@ -1,10 +1,12 @@
-<%= form_with url: "/teams/#{team.id}/players", method: :post, local: true do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
-<%= form.label :roster_spots %>
-<%= form.text_field :roster_spots %>
-<%= form.label :full_roster %>
-<%= form.text_field :full_roster %>
+<%= form_with url: "/teams/#{@team.id}/players", method: :post, local: true do |form| %>
+<%= form.label :first_name %>
+<%= form.text_field :fname %>
+<%= form.label :last_name %>
+<%= form.text_field :lname %>
+<%= form.label :jersey %>
+<%= form.text_field :jersey %>
+<%= form.label :healthy %>
+<%= form.text_field :healthy %>
 
-<%= form.submit "Create New Team" %>
+<%= form.submit "Add Player" %>
 <% end %>

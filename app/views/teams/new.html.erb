@@ -1,10 +1,8 @@
 <%= form_with url: '/teams', method: :post, local: true do |form| %>
-  <%= form.label :fname %>
-  <%= form.text_field :fname %>
-  <%= form.label :lname %>
-  <%= form.text_field :lname %>
-  <%= form.label :jersey %>
-  <%= form.text_field :jersey %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :roster_spots %>
+  <%= form.text_field :roster_spots %>
   <%= form.label :full_roster %>
   <%= form.text_field :full_roster %>
 

@@ -16,8 +16,7 @@ class PlayersController < ApplicationController
     player.update(player_params)
     redirect_to "/players/#{player.id}"
   end
-
-
+  
   private
 
     def player_params

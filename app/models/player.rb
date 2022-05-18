@@ -7,7 +7,11 @@ class Player < ApplicationRecord
   validates_inclusion_of :healthy, :in => [true, false]
 
   def self.is_healthy
-      Player.where(healthy: true)
+    Player.where(healthy: true)
   end
-  
+
+  def self.alphabetize
+    Player.order(:fname)
+  end
+
 end

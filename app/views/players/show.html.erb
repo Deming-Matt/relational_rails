@@ -6,3 +6,4 @@
   <p>"Healthy: <%= @players.healthy %>"</p>
 
 <%= link_to "Update Player", "/players/#{@players.id}/edit" %>
+<%= link_to "Delete Player", "/players/#{@players.id}", method: :delete %>

@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   patch 'players/:id', to: 'players#update'
   get '/teams/:id/players/alphabetize', to: 'team_players#alphabetize'
   delete '/teams/:id', to: 'teams#destroy'
+  delete '/players/:id', to: 'players#destroy'
 end

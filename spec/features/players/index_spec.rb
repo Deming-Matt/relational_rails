@@ -58,4 +58,15 @@ RSpec.describe 'player index page', type: :feature do
 
     expect(current_path).to eq("/players/#{nathan.id}/edit")
   end
+
+  #user story 23
+  it 'shows a delete link next to each player and can delete that player' do
+    coav = Team.create!(name: "Colorado Avalanche", roster_spots: 23, full_roster: true)
+    nathan = coav.players.create!(fname: "Nathan", lname: "MacKinnon", jersey: 29, healthy: true)
+
+    visit "/players"
+    click_on "Delete"
+
+    expect(current_path).to eq("/players")
+  end
 end

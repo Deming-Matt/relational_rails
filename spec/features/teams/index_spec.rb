@@ -60,10 +60,17 @@ RSpec.describe 'team index page', type: :feature do
     derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false)
 
     visit "/teams"
-    save_and_open_page
     click_on "Edit" #next to a team
     expect(current_path).to eq("/teams/#{derw.id}/edit")
-    
   end
 
+  #user story 22
+  it 'has a delete link next to each team on the index page' do
+    derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false, created_at: 5.second.ago)
+
+    visit "/teams"
+    click_on "Delete"
+    expect(current_path).to eq("/teams")
+    expect(page).to_not have_content("Detriot Redwings")
+  end
 end

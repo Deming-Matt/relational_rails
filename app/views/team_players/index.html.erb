@@ -9,7 +9,7 @@ Return all players with jerseys higher than ( )
 <% end %>
 
 <% @players.each do |player| %>
-<p>"Name: <%= player.fname %> <%= player.lname %>, Jersey: <%= player.jersey %>, Healthy: <%= player.healthy %>"</p>
+<p>"Name: <%= player.fname %> <%= player.lname %>, Jersey: <%= player.jersey %>, Healthy: <%= player.healthy %>" <%= link_to "Edit", "/players/#{player.id}/edit" %> <%= link_to "Delete", "/players/#{player.id}", method: :delete %></p>
 <% end %>
 
 

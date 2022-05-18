@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get '/teams/:id/players/alphabetize', to: 'team_players#alphabetize'
   delete '/teams/:id', to: 'teams#destroy'
   delete '/players/:id', to: 'players#destroy'
+  get '/teams/:id/players/jerseys', to: 'team_players#jerseys'
 end

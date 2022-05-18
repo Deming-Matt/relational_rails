@@ -5,6 +5,9 @@ class TeamPlayersController < ApplicationController
     if params[:alphabetize]
       @players = @teams.players.alphabetize
     end
+    if params[:jerseys]
+      @players = @teams.players.jersey_higher_than(params[:number])
+    end
   end
 
   def new
@@ -19,6 +22,10 @@ class TeamPlayersController < ApplicationController
 
   def alphabetize
     redirect_to action: "index", alphabetize: true
+  end
+
+  def jerseys
+    redirect_to action: "index", jerseys: true
   end
 
   private

@@ -35,6 +35,25 @@ RSpec.describe 'team_players_index', type: :feature do
     expect(page.text.index("#{darcy.fname}")).to be < page.text.index("#{gabriel.fname}")
     expect(page.text.index("#{gabriel.fname}")).to be < page.text.index("#{jack.fname}")
     expect(page.text.index("#{jack.fname}")).to be < page.text.index("#{nathan.fname}")
-
   end
+
+  #user Story 21
+  it 'shows a form that will bring back players over a certain threshold' do
+    coav = Team.create!(name: "Colorado Avalanche", roster_spots: 23, full_roster: true)
+    nathan = coav.players.create!(fname: "Nathan", lname: "MacKinnon", jersey: 29, healthy: true)
+    gabriel = coav.players.create!(fname: "Gabriel", lname: "Landeskog", jersey: 92, healthy: true)
+    darcy = coav.players.create!(fname: "Darcy", lname: "Kuemper", jersey: 35, healthy: false)
+    jack = coav.players.create!(fname: "Jack", lname: "Johnson", jersey: 3, healthy: true)
+
+    visit "/teams/#{coav.id}/players"
+    fill_in "Number", with: "30"
+    click_on "Submit"
+
+    expect(current_path).to eq("/teams/#{coav.id}/players")
+    expect(page).to have_content("Darcy Kuemper")
+    expect(page).to have_content("Gabriel Landeskog")
+    expect(page).to_not have_content("Nathan MacKinnon")
+    expect(page).to_not have_content("Jack Johnson")
+  end
+
 end

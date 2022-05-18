@@ -12,18 +12,6 @@ RSpec.describe 'team index page', type: :feature do
     expect(page).to have_content("Club: #{derw.name}")
   end
 
-  #User Story 2, Parent Show
-  it "can see the attribute for teams" do
-    coav = Team.create!(name: "Colorado Avalanche", roster_spots: 23, full_roster: true)
-    derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false)
-
-    visit "/teams/#{coav.id}"
-
-    expect(page).to have_content("Club: #{coav.name}")
-    expect(page).to have_content("Roster Spots Filled: #{coav.roster_spots}")
-    expect(page).to have_content("Is their roster full? #{coav.full_roster}")
-  end
-
   #User story 6
   it 'can show the records in the teams database are ordered by most recently created first' do
     derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false, created_at: 5.second.ago)
@@ -65,6 +53,17 @@ RSpec.describe 'team index page', type: :feature do
     click_link "Teams"
 
     expect(page).to have_current_path('/teams')
+  end
+
+  #User story 17
+  it 'has a link next to each team to edit that team' do
+    derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false)
+
+    visit "/teams"
+    save_and_open_page
+    click_on "Edit" #next to a team
+    expect(current_path).to eq("/teams/#{derw.id}/edit")
+    
   end
 
 end

@@ -2,7 +2,7 @@
 <%= link_to "Teams", "/teams" %> <%= link_to "All Players", "/players" %>
 
 <% @teams.each do |team| %>
-  <p>"Club: <%= team.name %> <%= team.created_at %>"</p>
+  <p>"Club: <%= team.name %> <%= team.created_at %>" <%= link_to "Edit", "/teams/#{team.id}/edit" %></p>
 <% end %>
 
 <%= link_to "New Team", "/teams/new" %>

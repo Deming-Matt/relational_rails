@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    @players = Player.is_healthy
   end
 
   def show
@@ -16,8 +16,7 @@ class PlayersController < ApplicationController
     player.update(player_params)
     redirect_to "/players/#{player.id}"
   end
-
-
+  
   private
 
     def player_params

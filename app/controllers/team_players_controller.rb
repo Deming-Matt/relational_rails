@@ -2,7 +2,9 @@ class TeamPlayersController < ApplicationController
   def index
     @teams = Team.find(params[:id])
     @players = @teams.players
-    # require "pry"; binding.pry
+    if params[:alphabetize]
+      @players = @teams.players.alphabetize
+    end
   end
 
   def new
@@ -13,6 +15,10 @@ class TeamPlayersController < ApplicationController
     team = Team.find(params[:id])
     team.players.create(team_players_params)
     redirect_to "/teams/#{team.id}/players"
+  end
+
+  def alphabetize
+    redirect_to action: "index", alphabetize: true
   end
 
   private

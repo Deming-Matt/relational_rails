@@ -32,10 +32,13 @@ RSpec.describe 'team index page', type: :feature do
     stlb = Team.create!(name: "St. Louis Blues", roster_spots: 21, full_roster: false, created_at: 4.second.ago)
 
     visit '/teams'
-
+    save_and_open_page
     expect(page.text.index("#{coav.name}")).to be < page.text.index("#{stlb.name}")
     expect(page.text.index("#{stlb.name}")).to be < page.text.index("#{derw.name}")
     expect(page.text.index("#{derw.name}")).to be < page.text.index("#{miwi.name}")
+    expect(page).to have_content("#{coav.created_at}")
+    expect(page).to have_content("#{derw.created_at}")
+    expect(page).to have_content("#{stlb.created_at}")
   end
 
   #User story 7

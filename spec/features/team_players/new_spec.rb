@@ -16,7 +16,6 @@ RSpec.describe "new teams player", type: :feature do
     click_button "Add Player"
 
     expect(current_path).to eq("/teams/#{coav.id}/players")
-    save_and_open_page
     expect(page).to have_content("Patrick Roy")
   end
 end

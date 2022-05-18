@@ -4,3 +4,5 @@
   <p>"Name: <%= @players.fname %> <%= @players.lname %>"</p>
   <p>"Jersey: <%= @players.jersey %>"</p>
   <p>"Healthy: <%= @players.healthy %>"</p>
+
+<%= link_to "Update Player", "/players/#{@players.id}/edit" %>

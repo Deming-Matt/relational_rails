@@ -47,7 +47,7 @@ RSpec.describe 'team_players_index', type: :feature do
 
     visit "/teams/#{coav.id}/players"
     fill_in "Number", with: "30"
-    click_on "Only returns players with jerseys higher than number"
+    click_on "Submit"
 
     expect(current_path).to eq("/teams/#{coav.id}/players")
     expect(page).to have_content("Darcy Kuemper")

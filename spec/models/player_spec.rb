@@ -13,6 +13,7 @@ describe Player, type: :model do
     it { should allow_value(false).for(:healthy)}
   end
 
+#user story 15
   describe "healthy" do
     it "will show only players that are healthy" do
       coav = Team.create!(name: "Colorado Avalanche", roster_spots: 23, full_roster: true)

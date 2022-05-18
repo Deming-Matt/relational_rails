@@ -12,7 +12,5 @@ Return all players with jerseys higher than ( )
 <p>"Name: <%= player.fname %> <%= player.lname %>, Jersey: <%= player.jersey %>, Healthy: <%= player.healthy %>" <%= link_to "Edit", "/players/#{player.id}/edit" %> <%= link_to "Delete", "/players/#{player.id}", method: :delete %></p>
 <% end %>
 
-
-
 <%= link_to "Add Player", "/teams/#{@teams.id}/players/new" %>
 <%= link_to "Alphabetize", "/teams/#{@teams.id}/players/alphabetize" %>

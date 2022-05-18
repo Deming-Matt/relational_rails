@@ -9,7 +9,7 @@ RSpec.describe 'team_players_show', type: :feature do
     coav.players.create!(fname: "Darcy", lname: "Kuemper", jersey: 35, healthy: false)
     coav.players.create!(fname: "Jack", lname: "Johnson", jersey: 3, healthy: true)
 
-    visit "/teams/#{coav.id}" #show page: need link on the show page!
+    visit "/teams/#{coav.id}"
 
     click_link "#{coav.name} Players"
     expect(current_path).to eq("/teams/#{coav.id}/players")

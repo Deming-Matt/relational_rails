@@ -20,7 +20,7 @@ RSpec.describe 'team index page', type: :feature do
     stlb = Team.create!(name: "St. Louis Blues", roster_spots: 21, full_roster: false, created_at: 4.second.ago)
 
     visit '/teams'
-    save_and_open_page
+
     expect(page.text.index("#{coav.name}")).to be < page.text.index("#{stlb.name}")
     expect(page.text.index("#{stlb.name}")).to be < page.text.index("#{derw.name}")
     expect(page.text.index("#{derw.name}")).to be < page.text.index("#{miwi.name}")
@@ -60,7 +60,8 @@ RSpec.describe 'team index page', type: :feature do
     derw = Team.create!(name: "Detriot Red Wings", roster_spots: 22, full_roster: false)
 
     visit "/teams"
-    click_on "Edit" #next to a team
+    click_on "Edit"
+
     expect(current_path).to eq("/teams/#{derw.id}/edit")
   end
 
